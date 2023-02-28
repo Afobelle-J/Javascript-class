@@ -43,21 +43,36 @@ function tenth(){
     if(inputSplit.length ===2 && +words > 19){
     let newWord= (prefixes[inputSplit[0]] + " " + ones[inputSplit[1]]);
     console.log(newWord)
-   }
+    }
     if(inputSplit.length ===3){
         if(+inputSplit[1] === 0){
             let newWord= ones[inputSplit[0]] + ' hundred ' + " " + ones[inputSplit[2]];
             console.log(newWord)
         }
-        else if(+inputSplit[1] < 2){
+         else if(+inputSplit[1] < 2){
             let newWord= ones[inputSplit[0]] + ' hundred '+ " " + ones[+([inputSplit[1],inputSplit[2]]).join("")];
             console.log(newWord)
-    }
+        }
         else {
             let newWord= ones[inputSplit[0]] + ' hundred '+ prefixes[inputSplit[1]] +" " + ones[inputSplit[2]];
                 console.log(newWord);
-   };
-   
-console.log(tenth(Input))
+         };
+   } 
+       if(inputSplit.length ===4){
+        if(+inputSplit[1] === 0){
+            let newWord=  ones[inputSplit[0]] + ' thousand ' + " " + ones[+([inputSplit[2], inputSplit[3]]).join("")];
+            console.log(newWord)
+        }
+         else if(+inputSplit[1] < 2){
+            let newWord= ones[inputSplit[0]] + ' thousand ' + ones[inputSplit[1]] + ' hundred ' + " " + ones[+([inputSplit[2],inputSplit[3]]).join("")];
+            console.log(newWord)
+        }
+        else {
+            let newWord= ones[inputSplit[0]] + ' thousand ' + ones[inputSplit[1]] + ' hundred ' + prefixes[inputSplit[2]] +" " + ones[inputSplit[3]];
+                console.log(newWord);
+         };
+   } 
+}
+tenth(Input)
     
     
